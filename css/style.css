@@ -100,14 +100,14 @@ h6,
 
 .navbar .navbar-brand,
 .navbar a.btn {
-    height: 80px
+    height: 50px
 }
 
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 25px 0;
     color: var(--dark);
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 500;
     outline: none;
 }
@@ -573,11 +573,7 @@ h6,
     margin: 0;
     padding: 0;
   }
-  body {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 30px;
-  }
+
   
   header {
     margin-bottom: 20px;
