@@ -554,91 +554,8 @@
                 <p class="fs-5 fw-bold text-primary">Our Team</p>
                 <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/Dr. Dipal Baruah.jpeg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Doris Jordan</h4>
-                            <p class="text-primary">Landscape Designer</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/Dr. D. C. Baruah.jpeg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Dr. D. C. Baruah</h4>
-                            <p class="text-primary">dummy text</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/Dr. Manzul Hazarika.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Diana Wagner</h4>
-                            <p class="text-primary">new post</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/Dr. Dhanapati Deka.jpeg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Diana Wagner</h4>
-                            <p class="text-primary">new post</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/Dr. Biraj Kr Kakati  .jpeg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Diana Wagner</h4>
-                            <p class="text-primary">new post</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/RupamGoswami.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Rupam Goswami</h4>
-                            <p class="text-primary">new post</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row g-4" id="team-container">
+                <!-- Images will be dynamically added here -->
             </div>
         </div>
     </div>
@@ -755,6 +672,57 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+ 
+    
+    <script>
+        // Array of image URLs
+        const imageUrls = [
+            "img/Dr. Dipal Baruah.jpeg",
+            "img/Dr. D. C. Baruah.jpeg",
+            "img/Dr. Manzul Hazarika.jpeg",
+            "img/Dr. Dhanapati Deka",
+            "img/Dr. Biraj Kr Kakati",
+            "img/Dr. Rupam Goswami.jpg",
+            "img/Dr. D. C. Baruah.jpeg",
+            "img/Dr. D. C. Baruah.jpeg",
+            "img/Dr. D. C. Baruah.jpeg",
+            "img/Dr. D. C. Baruah.jpeg",
+            // Add more image URLs as needed
+        ];
+    
+        // Reference to the team container
+        const teamContainer = document.getElementById('team-container');
+    
+        // Loop through image URLs and generate HTML structure
+        imageUrls.forEach((imageUrl, index) => {
+            // Create team item element
+            const teamItem = document.createElement('div');
+            teamItem.className = "col-lg-4 col-md-6 wow fadeInUp";
+            teamItem.setAttribute('data-wow-delay', `0.${index + 1}s`);
+    
+            // Create team item content
+            teamItem.innerHTML = `
+                <div class="team-item rounded">
+                    <div class="image-container">
+                        <img class="img-fluid" src="${imageUrl}" alt="">
+                    </div>
+                    <div class="team-text">
+                        <h4 class="mb-0">Doris Jordan</h4>
+                        <p class="text-primary">Landscape Designer</p>
+                        <div class="team-social d-flex">
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            `;
+    
+            // Append team item to the team container
+            teamContainer.appendChild(teamItem);
+        });
+    </script>
+    
 </body>
 
 </html>
