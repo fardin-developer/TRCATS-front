@@ -119,9 +119,8 @@
         >
           <a
             href="index.html"
-            class="nav-item nav-link"
+            class="nav-item nav-link active"
             id="activeHandle"
-            onclick="activeHandle(event)"
             >Home</a
           >
           <a href="#ourServices" class="nav-item nav-link">Services</a>
@@ -1118,7 +1117,6 @@
       })
 
       function activeHandle(event) {
-        alert('ikoi')
         event.preventDefault()
         var element = document.getElementById('activeHandle')
         element.classList.add('active')
