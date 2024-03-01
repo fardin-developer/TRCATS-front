@@ -337,6 +337,15 @@ h6,
 }
 
 .portfolio-inner {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+.portfolio-inner img{
+    width: 300px;
+    height: 400px;
     position: relative;
     overflow: hidden;
 }
