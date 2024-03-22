@@ -856,72 +856,16 @@
           <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
             <p class="fs-5 fw-bold text-primary">Testimonial</p>
             <h1 class="display-5 mb-5">What Our Clients Say About Us!</h1>
-            <!-- <p class="mb-4">
-              TRCATS has been an invaluable partner for our organization. Their
-              commitment to excellence and innovative solutions have
-              significantly contributed to our success. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit.
-            </p> -->
-
             <a class="btn btn-primary py-3 px-4" href="/testimonial.html"
               >See More</a
             >
           </div>
           <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="testimonial-item">
-                <!-- <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-1.jpg"
-                  alt=""
-                /> -->
-
-                <h4>Client Name</h4>
-                <span>Dr. Rose Kumar Kutum</span>
-                <h4 style="margin-top: 10px">Email</h4>
-                <span style="margin-top: -5px"
-                  >purbanchalcollege@gmail.com</span
-                >
-                <p class="fs-5" style="margin-top: 10px">
-                  The suggestion provided by the green auditor has helped us in
-                  understanding the importance of maintaining a good and healthy
-                  environment.
-                </p>
+            <div class="owl-carousel testimonial-carousel" id="testimonials">
+             
               </div>
-              <div class="testimonial-item">
-                <!-- <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-1.jpg"
-                  alt=""
-                /> -->
-
-                <h4>Client Name</h4>
-                <span>North Lakhimpur College (Autonomous)</span>
-                <h4 style="margin-top: 10px">Email</h4>
-                <span style="margin-top: -5px">raghabparajuli@gmail.com</span>
-                <p class="fs-5" style="margin-top: 10px">
-                  We have seen that the entire auditing process was very
-                  transparent assisted with effective communication, your time
-                  bound and professional approach can help institutions of the
-                  entire North Eastern region to select you as the most
-                  authentic agency for quality audits.
-                </p>
-              </div>
-              <div class="testimonial-item">
-                <!-- <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-1.jpg"
-                  alt=""
-                /> -->
-
-                <h4>Client Name</h4>
-                <span>Mr Dipen kumar Dutta </span>
-                <h4 style="margin-top: 10px">Email</h4>
-                <span style="margin-top: -5px"
-                  >dipenkumardutta69@gmail.com</span
-                >
-                <p class="fs-5" style="margin-top: 10px">Overall good</p>
-              </div>
+              <button onclick="decreament()">Previous </button>
+              <button onclick="increament()">Next</button>
             </div>
           </div>
         </div>
@@ -991,6 +935,8 @@
         </div>
       </div>
     </div>
+    <div id=""></div>
+
     <!-- Footer End -->
 
     <!-- Copyright Start -->
@@ -1122,5 +1068,122 @@
         element.classList.add('active')
       }
     </script>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      // Client ID and API key from the Developer Console
+      const CLIENT_ID = 'YOUR_CLIENT_ID'
+      const API_KEY = 'AIzaSyD20d6iR_cXlOhLDm1Fn4qyL-zTtKDJfJw'
+
+      // Array to hold testimonial data
+      const testimonials = [];
+      let current = 0;
+
+      // Load the Google Sheets API
+      function initClient() {
+        gapi.client
+          .init({
+            apiKey: API_KEY,
+            clientId: CLIENT_ID,
+            discoveryDocs: [
+              'https://sheets.googleapis.com/$discovery/rest?version=v4'
+            ]
+          })
+          .then(function () {
+            // Fetch data from the spreadsheet
+            gapi.client.sheets.spreadsheets.values
+              .get({
+                spreadsheetId: '1DYnh5jFY2wAZQnH2j3pje3ASoW246srgjU6njPYTdx8',
+                range: 'Sheet1!A2:C' // Adjust range according to your spreadsheet
+              })
+              .then(
+                function (response) {
+                  const values = response.result.values
+                  if (values) {
+                    values.forEach(function (row) {
+                      testimonials.push({
+                        name: row[0],
+                        email: row[1],
+                        feedback: row[2]
+                      })
+                    })
+                    renderTestimonials()
+                  }
+                },
+                function (response) {
+                  console.error('Error fetching data:', response.result.error)
+                }
+              )
+          })
+      }
+
+      function decreament(){
+        if (current>0) {
+          current-= 1;
+
+        }
+        renderTestimonials(); 
+      }
+
+      function increament (){
+        current+= 1;
+        renderTestimonials(); 
+      }
+      
+
+      // Render testimonials in HTML
+      function renderTestimonials() {
+  const testimonialsContainer = document.getElementById('testimonials');
+
+  // Clear existing content inside the container
+  testimonialsContainer.innerHTML = '';
+
+  // Check if there are any testimonials in the array
+  if (testimonials.length > 0) {
+    // Calculate the current testimonial index considering looping
+    const currentIndex = current % testimonials.length;
+    const currentTestimonial = testimonials[currentIndex];
+
+    const testimonialElement = document.createElement('div');
+    testimonialElement.classList.add('testimonial-item');
+
+    testimonialElement.innerHTML = `
+      <h4>Client Name</h4>
+      <span>${currentTestimonial.name}</span>
+      <h4 style="margin-top: 10px">Email</h4>
+      <span style="margin-top: -5px">${currentTestimonial.email}</span>
+      <p class="fs-5" style="margin-top: 10px">${currentTestimonial.feedback}</p>
+    `;
+
+    testimonialsContainer.appendChild(testimonialElement);
+  } else {
+    // Handle case when there are no testimonials in the array
+    testimonialsContainer.innerHTML = 'No testimonials available';
+  }
+}
+
+
+      // Initialize Owl Carousel
+      $('.testimonial-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        navText: [
+          '<i class="fa fa-angle-left"></i>',
+          '<i class="fa fa-angle-right"></i>'
+        ]
+      })
+
+      // Initialize API client
+      gapi.load('client', initClient);
+     
+      setInterval(function() {
+    increament();
+  }, 10000);
+    </script>
+
   </body>
 </html>

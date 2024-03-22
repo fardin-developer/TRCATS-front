@@ -754,4 +754,29 @@ h6,
     height: 100%;
     object-fit: cover; /* Ensures the image covers the entire container */
 }
+.testimonial-carousel.owl-carousel {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonial-carousel .testimonial-item {
+    display: block;
+    animation: slideRightToLeft 3s forwards; /* Adjust animation duration as needed */
+  }
+  
+  @keyframes slideRightToLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    80% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  
+  
 
