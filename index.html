@@ -368,7 +368,7 @@
         <div class="col-lg-7">
           <div class="bg-white rounded p-4 p-sm-5 wow fadeIn" data-wow-delay="0.5s">
             <h1 class="display-5 text-center mb-5">Get A Free Quote</h1>
-            <form action="mailto:nrdsraz@gmail.com" method="post" enctype="text/plain">
+            <form onSubmit="handleClick(event)">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
@@ -396,12 +396,24 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary py-3 px-4" type="submit">
+                  <button class="btn btn-primary py-3 px-4" type="button" onclick="handleClick(event)">
                     Send Message
                   </button>
                 </div>
               </div>
             </form>
+            <script>
+              const handleClick = (e) => {
+                e.preventDefault(); // Prevent default form submission behavior
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Open the user's default email client with pre-filled fields
+                window.open(`mailto:nrdsraz@gmail.com?subject=${subject}&body=${name}: ${message}`);
+              }
+            </script>
           </div>
         </div>
       </div>
