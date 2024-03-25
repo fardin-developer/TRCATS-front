@@ -95,7 +95,7 @@ h6,
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
-    height: 100px;
+    height: 80px;
 }
 
 .navbar .navbar-brand,
@@ -106,7 +106,7 @@ h6,
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 25px 0;
-    color: var(--dark);
+    color: #e8f5e9;
     font-size: 18px;
     font-weight: 500;
     outline: none;
@@ -114,8 +114,14 @@ h6,
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    /* color: var(--primary); */
+    color: white;
 }
+
+nav a img {
+    width: 200px;
+}
+
 
 .navbar .dropdown-toggle::after {
     border: none;
@@ -688,7 +694,7 @@ h6,
   }
   
   button:hover {
-    background: #ff4242;
+    background: #545151;
     transition: ease-in 0.4s;
   }
   
@@ -776,7 +782,73 @@ h6,
       transform: translateX(0%);
     }
   }
+  .both{
+    display: flex;
+  }
+  .left{
+    height: auto;
+  }
+  .newsContainer {
+    height: 450px; /* Set the desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* border: 1px solid #ccc; */
+     /* Optional: Add a border for clarity */
+    padding: 10px; /* Optional: Add padding for better appearance */
+}
+
+.newsItem {
+    margin-bottom: 20px; /* Optional: Add some space between news items */
+}
+
+  .newsbtn {
+    text-align: center;
+    display: block; 
+    margin: 10px auto; 
+    margin-bottom: 0px;
+    background-color: #ef804c;
+    width: 60%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 3px 3px rgb(76, 76, 76)
+
+}
+
+
   
-  
+  .newsItem{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 3px rgb(118, 118, 118)
+
+  }
+  .newsItem .title{
+    font-size: 14px;
+    color: rgb(122, 28, 141);
+  }
+  .newsItem .description{
+    width: 100%;
+   font-size:14px;
+   a{
+    color: #2C4BB0;
+    text-align: justify;
+    width: 100%;
+
+   }
+  }
+  .newsItem .description a p{
+    margin: 0;
+  }
+  .newsItem .date{
+   font-size: small;
+  }
   
 
+  .navbar{
+    background-color: var(--dark);
+    
+}
