@@ -852,3 +852,20 @@ nav a img {
     background-color: var(--dark);
     
 }
+
+.left{
+    width: 30vw;
+}
+
+@media screen and (max-width: 576px) {
+    #bothRight{
+        display: none;
+    }
+    .both{
+        background-color: #17696a;
+    }
+    .left{
+        width: 70vw;
+        margin: auto;
+    }
+}
