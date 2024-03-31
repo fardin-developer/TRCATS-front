@@ -685,7 +685,7 @@ nav a img {
   }
   
   button {
-    background: #17696a;
+    background: #ffffff;
     border-radius: 4px;
     padding: 10px 37px;
     border: none;
@@ -849,7 +849,7 @@ nav a img {
   
 
   .navbar{
-    background-color: var(--dark);
+    background-color: black;
     
 }
 
@@ -868,4 +868,28 @@ nav a img {
         width: 70vw;
         margin: auto;
     }
+    #team-container{
+        display: grid;
+        grid-template-columns: auto auto ;
+    }
+    .team-text{
+        scale:  0.8;
+    }
+    .navbar-nav{
+        background-color: white;
+       
+}
+    .navbar-nav a{
+        text-decoration: none;
+        color: black !important; /* Added !important for increased specificity */
+       
+}
+
+.navbtn{
+    background-color: #fff;
+}
+.getaquoteBtn{
+    background-color:  rgb(87, 93, 88);
+
+}
 }
