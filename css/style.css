@@ -955,11 +955,11 @@ nav a img {
     }
     #services2{
       display: grid;
-        grid-template-columns:auto auto;
+        grid-template-columns:auto;
         height: auto;
     }
     .portfolio-inner{
-      width: 80%;
+      width: 90%;
     }
   
  
