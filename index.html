@@ -381,34 +381,34 @@
 
 
 
-<!-- Projects Start -->
-<div class="container-xxl py-5" id="ourServices">
-  <div class="container">
-    <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
-      <p class="fs-5 fw-bold text-primary">Our Services</p>
-      <h1 class="display-5 mb-5">Services That We Offer For You</h1>
-    </div>
-    <div class="row g-4" id="services2">
+  <!-- Projects Start -->
+  <div class="container-xxl py-5" id="ourServices">
+    <div class="container">
+      <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+        <p class="fs-5 fw-bold text-primary">Our Services</p>
+        <h1 class="display-5 mb-5">Services That We Offer For You</h1>
+      </div>
+      <div class="row g-4" id="services2">
 
 
+      </div>
     </div>
   </div>
-</div>
-<!-- Projects End -->
+  <!-- Projects End -->
 
-<!-- Team Start -->
-<div class="container-xxl py-5" id="ourTeam">
-  <div class="container">
-    <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
-      <p class="fs-5 fw-bold text-primary">Our Team</p>
-      <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
-    </div>
-    <div class="row g-4" id="team-container">
-      <!-- Your team members will be added dynamically by JavaScript -->
+  <!-- Team Start -->
+  <div class="container-xxl py-5" id="ourTeam">
+    <div class="container">
+      <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+        <p class="fs-5 fw-bold text-primary">Our Team</p>
+        <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
+      </div>
+      <div class="row g-4" id="team-container">
+        <!-- Your team members will be added dynamically by JavaScript -->
+      </div>
     </div>
   </div>
-</div>
-<!-- Team End -->
+  <!-- Team End -->
 
 
   <!-- Testimonial Start -->
@@ -638,8 +638,8 @@
                 count++;
 
                 return `
-                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="${index * 0.1}s">
-    <div class="portfolio-inner rounded">
+  <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="${index * 0.1}s">
+    <div class="portfolio-inner rounded ">
         <div class="image-container">
           <img class="img-fluid" src="${img2}" alt="" style="max-width: 100%; height: 100%; max-height: 100%; object-fit: contain;" />
         </div>
@@ -668,21 +668,63 @@
                 return '';
               }
             }).join('');
-          
 
 
 
 
 
-            news.innerHTML = values.map(([img, name, description, projectTitle, img2, newsTitle, newsDescription, newsDate], index) => {
+
+
+          } else {
+            console.error('No data found.');
+          }
+        }, error => {
+          console.error('Error fetching data:', error.result.error);
+        });
+      });
+    }
+
+    // Initialize API client
+    gapi.load('client', initClient);
+
+
+
+
+    // Call loadProjectsAndResize when the page is loaded
+  </script>
+
+  <!-- news n Notifications -->
+  <script>
+    const SPREADSHEET_ID2 = '1L2DWd5tNmNSpqzn40hKs1CwU0WitQLy41licnXd2h7o';
+
+    function initClient() {
+      gapi.client.init({
+        apiKey: tAPI_KEY,
+        clientId: tCLIENT_ID,
+        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
+      }).then(() => {
+        // Fetch data from the spreadsheet
+        gapi.client.sheets.spreadsheets.values.get({
+          spreadsheetId: SPREADSHEET_ID2,
+          range: RANGE
+        }).then(response => {
+          const values = response.result.values;
+          console.log(values)
+          if (values && values.length > 0) {
+            // Insert fetched data into HTML            
+            const news = document.getElementById('allItems');
+      
+
+            news.innerHTML = values.map(([ newsTitle,newsLink, newsDescription, newsDate], index) => {
               // Check if the img value is not an empty string
+              console.log("nnew " + newsTitle);
+
               if (newsTitle.trim() !== "" || newsTitle) {
-                console.log(newsTitle);
 
                 return `
             <div class="newsItem">
                 <div class="title">${newsTitle}</div>
-                <div class="description"><a href="">
+                <div class="description"><a href="${newsLink}">
                     <p>${newsDescription}</p>
                 </a></div>
                 <div class="date">Posted: ${newsDate}</div>
@@ -709,10 +751,6 @@
     // Initialize API client
     gapi.load('client', initClient);
 
-
-
-
-    // Call loadProjectsAndResize when the page is loaded
   </script>
 
   <!-- team list -->

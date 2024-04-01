@@ -141,6 +141,9 @@ nav a img {
     .navbar .navbar-nav {
         border-top: 1px solid #EEEEEE;
     }
+    .navbtn{
+      background-color: #fff;
+  }
 }
 
 @media (min-width: 992px) {
@@ -160,6 +163,7 @@ nav a img {
         transition: .5s;
         opacity: 1;
     }
+  
 }
 
 
@@ -685,7 +689,7 @@ nav a img {
   }
   
   button {
-    background: #ffffff;
+    background: #726d6d;
     border-radius: 4px;
     padding: 10px 37px;
     border: none;
@@ -885,9 +889,7 @@ nav a img {
        
 }
 
-.navbtn{
-    background-color: #fff;
-}
+
 .getaquoteBtn{
     background-color:  rgb(87, 93, 88);
 
@@ -946,17 +948,20 @@ nav a img {
       padding-right: 15px;
     }
     #projectList{
+      width:90vw;
         display: grid;
         grid-template-columns:auto auto;
-        z-index: 0;
         height: auto;
     }
-  }
-  #projectList{
-    z-index: 0;
-    height: auto;
+    #services2{
+      display: grid;
+        grid-template-columns:auto auto;
+        height: auto;
+    }
+    .portfolio-inner{
+      width: 80%;
+    }
+  
+ 
   }
 
-  #ourTeam{
-    z-index: 0;
-  }
