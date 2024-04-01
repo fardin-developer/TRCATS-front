@@ -110,7 +110,7 @@
 
   <!-- Carousel & News Start-->
 
-  <div class="both">
+  <div class="both" style="border-radius: 15px;">
     <div class="container-fluid p-0 wow fadeIn" id="bothRight" data-wow-delay="0.1s" style="width: 70vw;">
       <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -159,7 +159,7 @@
     <!-- Carousel End -->
 
     <div class="left">
-      <div class="newsContainer">
+      <div class="newsContainer" style="background-color:  rgb(69, 90, 75);border-radius: 15px;">
         <span class="newsbtn" style="color: black;">News & Notifications</span>
         <div class="allItems" id="allItems">
 
@@ -170,6 +170,11 @@
     </div>
   </div>
   <!-- Carousel & News End -->
+
+
+  <div class="grayshadow" style="height: 20px; width: 100vw; background-color: rgb(212, 212, 212);box-shadow: 10px 10px 10px 10px;">
+
+  </div>
 
 
 
@@ -610,7 +615,7 @@
 
               if (img.trim() !== "") {
                 return `
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp">
                 <div class="service-item rounded d-flex h-100">
                     <div class="service-img rounded">
                         <img class="img-fluid" src="${img}" alt="" />

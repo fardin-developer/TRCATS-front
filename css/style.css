@@ -915,7 +915,9 @@ nav a img {
   }
   
  
-  
+  .both{
+    background-color: rgb(69, 90, 75);
+  }
 
   /* Adjustments for mobile devices */
 @media (max-width: 767px) {
@@ -960,6 +962,15 @@ nav a img {
     }
     .portfolio-inner{
       width: 90%;
+    }
+    .container-fluid{
+      display: none;
+    }
+    .both{
+      background-color: white;
+    }
+    .grayshadow{
+      display: none;
     }
   
  
