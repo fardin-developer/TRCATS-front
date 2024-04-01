@@ -893,14 +893,70 @@ nav a img {
 
 }
 }
-.image-container {
+.custom-image-container {
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    height: 100%; /* Ensure the container takes up full height of its parent */
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Set the height as needed */
 }
 
-.image-container img {
-    width: 80%; /* Ensure the image doesn't exceed the container's width */
-    height: auto /* Ensure the image doesn't exceed the container's height */
+.custom-image-container img {
+    width: 200px;
+    max-height: 100%;
+    display: block; /* Ensure image behaves as a block element */
+    margin-top: auto;
 }
+
+
+#ourProjects {
+    margin-bottom: 100px; /* Adjust margin as needed to prevent overlap */
+  }
+  
+ 
+  
+
+  /* Adjustments for mobile devices */
+@media (max-width: 767px) {
+    .container-xxl {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  
+    .container-xxl .text-center.mx-auto {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  
+    .testimonial-carousel {
+      width: 100%;
+    }
+  
+    .owl-carousel .owl-item {
+      width: 100%;
+    }
+  
+    .container-fluid.quote.my-5.py-5 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  
+    .container-fluid.quote.my-5.py-5 .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    #projectList{
+        display: grid;
+        grid-template-columns:auto auto;
+        z-index: 0;
+        height: auto;
+    }
+  }
+  #projectList{
+    z-index: 0;
+    height: auto;
+  }
+
+  #ourTeam{
+    z-index: 0;
+  }
