@@ -144,6 +144,15 @@ nav a img {
     .navbtn{
       background-color: #fff;
   }
+  .navbar-nav{
+    background-color: white;
+   
+}
+.navbar-nav a{
+    text-decoration: none;
+    color: black !important; /* Added !important for increased specificity */
+   
+}
 }
 
 @media (min-width: 992px) {
@@ -162,6 +171,7 @@ nav a img {
         visibility: visible;
         transition: .5s;
         opacity: 1;
+        background-color: gray;
     }
   
 }
@@ -399,7 +409,11 @@ nav a img {
 
 .portfolio-inner:hover .portfolio-text {
     transition-delay: .3s;
-    opacity: 1;
+    background-color: rgb(52, 52, 52);
+    color: black;
+    text-align: center;
+
+    opacity: 0.8;
 }
 
 .portfolio-inner .portfolio-text .btn {
@@ -857,6 +871,7 @@ nav a img {
     
 }
 
+
 .left{
     width: 30vw;
 }
@@ -877,7 +892,8 @@ nav a img {
         grid-template-columns: auto auto ;
     }
     .team-text{
-        scale:  0.8;
+      font-size: x-small;
+        scale:  0.6;
     }
     .navbar-nav{
         background-color: white;
@@ -910,9 +926,7 @@ nav a img {
 }
 
 
-#ourProjects {
-    margin-bottom: 100px; /* Adjust margin as needed to prevent overlap */
-  }
+
   
  
   .both{
@@ -949,7 +963,7 @@ nav a img {
       padding-left: 15px;
       padding-right: 15px;
     }
-    #projectList{
+    #ourProjectsList{
       width:90vw;
         display: grid;
         grid-template-columns:auto auto;
@@ -963,9 +977,7 @@ nav a img {
     .portfolio-inner{
       width: 90%;
     }
-    .container-fluid{
-      display: none;
-    }
+  
     .both{
       background-color: white;
     }
@@ -975,4 +987,22 @@ nav a img {
   
  
   }
+  #footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Minimum 200px width for each column */
+    gap: 5px; /* Adjust the gap between grid items as needed */
+    margin-top: 0;
+    padding-top: 0;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+.footerItem{
+  margin-left: 20px;
+}
+
+
 
