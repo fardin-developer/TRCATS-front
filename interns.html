@@ -77,6 +77,18 @@
       text-align: right;
       /* Aligns text in second column to right */
     }
+
+    tbody tr td {
+      text-align: center;
+    }
+
+    tbody tr td div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0 15px;
+    }
   </style>
   </style>
 </head>
@@ -180,31 +192,16 @@
 
     <table>
       <tr>
-        <th style="width: 8%;">S.No.</th>
+        <th>S.No.</th>
         <th style="width: 18%;">Name</th>
         <th style="width: 30%;">Institute Name</th>
         <th style="width: 18%;">Duration</th>
-        <th>Topic</th>
+        <th style="width: 30%;">Topic</th>
       </tr>
       <div>
-        <tbody  id="dynamicData">
-          <tr>
-            <td>1</td>
-            <td>Test Name</td>
-            <td>
-              <div style="display: flex;align-items: center; justify-content: space-around;width: 100%;">
-                <img src="http://127.0.0.1:5502/img/FinalLogo.png" width="50px" alt="">
-                <span>Demo Institute</span>
-              </div>
+        <tbody id="dynamicData">
+        
 
-            </td>
-            <td>4 months</td>
-            <td>
-              Lorem, ipsum dolor sit amet consec
-
-            </td>
-          </tr>
-          
         </tbody>
       </div>
 
@@ -322,12 +319,13 @@
         return `
             <tr>
                 <td>${rowData[0]}</td>
-                <td>${rowData[1]}</td>
+                <td style="text-align:center">${rowData[1]}</td>
                 <td>
-                    <div style="display: flex;align-items: center; justify-content: flex-start;width: 100%;">
-                        <img src="${rowData[2]}" width="50px" alt="">
-                        <span>${rowData[3]}</span>
-                    </div>
+                  <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
+                   <img src="${rowData[2]}" width="70px" alt="">
+                    <span style="margin-left: 20px;">${rowData[3]}</span>
+                  </div>
+
                 </td>
                 <td>${rowData[4]}</td>
                 <td>${rowData[5]}</td>
