@@ -963,11 +963,23 @@ nav a img {
       padding-left: 15px;
       padding-right: 15px;
     }
+    #ourProjects{
+      margin: auto;
+    }
     #ourProjectsList{
-      width:90vw;
+        width:92vw;
         display: grid;
         grid-template-columns:auto auto;
         height: auto;
+        margin-left: 0;
+        margin: auto;
+    }
+    .portfolio-item{
+      width: 45vw;
+      font-size: xx-small;
+    }
+    .portfolio-item .card-body h5{
+      font-size: small;
     }
     #services2{
       display: grid;
@@ -984,6 +996,9 @@ nav a img {
     .grayshadow{
       display: none;
     }
+    .newsContainer{
+      margin-top: 20px;
+    }
   
  
   }
@@ -994,14 +1009,16 @@ nav a img {
     margin-top: 0;
     padding-top: 0;
     grid-auto-flow: row;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
+    justify-items:flex-end;
 }
 
 
 
 .footerItem{
-  margin-left: 20px;
+  width: 95%;
+  padding-left: 40px;
 }
 
 
