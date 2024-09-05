@@ -814,6 +814,17 @@
         name: 'Dr. Rupam Patowary',
         role: 'Honorary Consultant (Hybrid energy systems)',
         socialLinks: ['Link 31', 'Link 32', 'Link 33']
+      },
+      {
+        name: 'Dr. Naveen B.P.',
+        img:'NaveenProfileImg',
+        role: 'Honorary Advisor and Consultant (Solid Waste Management)',
+        socialLinks: ['Link 31', 'Link 32', 'Link 33']
+      },
+      {
+        name: 'Mr. Monoranjan Nath',
+        role: 'Honorary Advisor and Consultant (Water and Soil Quality)',
+        socialLinks: ['Link 31', 'Link 32', 'Link 33']
       }
     ]
     const teamContainer = document.getElementById('team-container')
@@ -827,7 +838,7 @@
       teamItem.innerHTML = `
         <div class="team-item rounded">
             <div class="image-container">
-                <img class="img-fluid" src="img/${name.name}.jpg" alt="">
+                <img class="img-fluid" src="img/${name.img?name.img:name.name}.jpg" alt="">
             </div>
             <div class="team-text">
                 <h4 class="mb-0">${name.name}</h4>
